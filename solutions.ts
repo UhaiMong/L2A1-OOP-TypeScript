@@ -18,7 +18,7 @@ filterEvenNumbers(numbers);
 
 // Solution: 2
 
-const reverseString = (str: String) => {
+const reverseString = (str: String): string => {
   const arr = str.split("");
   let left = 0;
   let right = arr.length - 1;
@@ -31,3 +31,12 @@ const reverseString = (str: String) => {
 };
 const str = "typescript";
 reverseString(str);
+
+// Solution: 3
+
+type StringOrNumber = string | number;
+const checkType = (value: StringOrNumber): "String" | "Number" => {
+  return typeof value === "string" ? "String" : "Number";
+};
+const val = "Hello";
+checkType(val);
