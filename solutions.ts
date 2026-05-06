@@ -1,4 +1,4 @@
-// Solution 1:
+// Solution: 1
 
 type NumArray = number[];
 
@@ -15,3 +15,19 @@ const filterEvenNumbers = (array: NumArray) => {
 const numbers = [1, 2, 3, 4, 5, 6];
 
 filterEvenNumbers(numbers);
+
+// Solution: 2
+
+const reverseString = (str: String) => {
+  const arr = str.split("");
+  let left = 0;
+  let right = arr.length - 1;
+  while (left < right) {
+    [arr[left], arr[right]] = [arr[right], arr[left]];
+    left++;
+    right--;
+  }
+  return arr.join("");
+};
+const str = "typescript";
+reverseString(str);
