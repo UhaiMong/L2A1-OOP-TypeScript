@@ -94,3 +94,24 @@ class Student extends Person {
 }
 const student = new Student("Alice", 20, "A");
 student.getDetails();
+
+// Problem 7:
+
+type Arr1 = number[];
+type Arr2 = number[];
+
+const getIntersection = (arr1: Arr1, arr2: Arr2): number[] => {
+  const set2 = new Set(arr2);
+  let result: number[] = [];
+  for (const item of arr1) {
+    if (set2.has(item)) {
+      result.push(item);
+    }
+    set2.delete(item);
+  }
+  return result;
+};
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+
+console.log(getIntersection(array1, array2));
