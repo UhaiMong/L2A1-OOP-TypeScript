@@ -4,7 +4,7 @@
 
 ## Introduction
 
-When you've been writing TypeScript for a while, and included `any` at least once. You were migrating JavaScript code and needed to "deal with it later." It felt like a quick fix. And it was - until it wasn't.
+When you've been writing TypeScript for a while, and included `any` at least once. You were migrating JavaScript code and needed to check later. It doesn't identify the type in featured typescript until execution.
 
 The thing `any`: doesn't just pause TypeScript's type checker. It shuts it down entirely. It's not a workaround - it's a hole in your safety net. TypeScript won't warn you when something falls through.
 
@@ -43,9 +43,9 @@ You get no error suggestion from the compiler.
 
 ---
 
-## Enter `unknown`, The Alternative of `any`
+## Why `unknown`, The Alternative of `any`?
 
-`unknown` is TypeScript's way of saying: _**"I have a value, but I don't know its type yet and I'm not going to pretend I do."**_
+`unknown` is TypeScript's way of saying: _**"I have a value, but I don't know its type yet, and I'm not going to pretend that I know."**_
 
 `unknown` forces you to verify what you actually have before you use it. Try to call a method or access a property on an `unknown` value without checking first, and TypeScript will immediately complain.
 
@@ -158,9 +158,9 @@ interface Square {
 
 function getArea(shape: Circle | Square) {
   if (shape.kind === "circle") {
-    return Math.PI * shape.radius ** 2;
+    return Math.PI * shape.radius * shape.radius;
   }
-  return shape.side ** 2;
+  return shape.side * shape.side;
 }
 ```
 
@@ -186,7 +186,7 @@ function process(input: unknown) {
 
 `unknown`, paired with type narrowing, gives you the best of both.
 
-The next time you're tempted to write `: any`, pause and ask yourself: _do I actually know what this is?_ If not, use `unknown` and narrow it down properly.
+The next time -when your are writing `: any`, pause and ask yourself: _do I actually know what this is?_ If not, use `unknown` and narrow it down properly.
 
 `narrowing` is the process of refining a value's type from a broader type to a more specific one based on runtime checks.
 

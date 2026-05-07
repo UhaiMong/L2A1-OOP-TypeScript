@@ -4,13 +4,17 @@
 
 ## Introduction
 
-Suppose you have a `User` interface with ten fields — `id`, `name`, `email`, `password`, `role`, `createdAt`, and so on. Now you need a type for a sign-up form (no `id` or `role` yet), another for a public profile (no `password` or sensitive fields), and another for an admin panel update (just a few editable fields).
+Suppose you have a `User` interface with ten fields — `id`, `name`, `email`, `password`, `role`, `createdAt`, and so on. Now you need a type for a
+
+1. sign-up form (no `id` or `role` yet),
+2. another for a public profile (no `password` or sensitive fields),
+3. and another for an admin panel update (just a few editable fields).
 
 What do you do? Copy-paste the interface and remove fields each time?
 
-If yes, until someone adds a new field to `User`. You are four different interfaces and updating them all manually. One missed change and you have a bug that TypeScript can't even catch, because your types are no longer derived from the source of truth.
+If yes, until someone adds a new field to `User`. You are three different interfaces and updating them all manually. One missed change and you have a bug that TypeScript can't even catch, because your types are no longer derived from the source of truth.
 
-This is exactly what TypeScript's `Pick` and `Omit` utility types solve. They let you create precise, specialized "slices" of a master interface without duplicating a single line. Your code stays DRY.
+This is exactly what TypeScript's `Pick` and `Omit` utility types solve. They let you create precise, specialized "slices" of a master interface without duplicating a single line. Your code stays **DRY(Don't Repeat Yourself).**
 
 ---
 
@@ -58,7 +62,7 @@ interface SignUpPayload {
 }
 ```
 
-This looks fine until `User` changes. Add a `username` field to `User`, and `PublicProfile` won't have it unless you remember to update it too. These interfaces are now living separate lives, drifting apart over time.
+This looks fine until `User` changes. Add a `username` field to `User`, and `PublicProfile` won't have it unless you remember to update it too. These interfaces are now in separate codebases.
 
 ---
 
