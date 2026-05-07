@@ -1,3 +1,5 @@
+<img src="./assets/anyVSunknow.png" style="width:100%; height:250px"/>
+
 # Stop Using `any`, Here's Why `unknown` Is the Safer Choice in TypeScript
 
 ## Introduction
@@ -112,7 +114,7 @@ function greet(name: string | null) {
 }
 ```
 
-### 4. `Eauality` Narrowing
+### 4. `Equality` Narrowing
 
 Checks if two variables are equal to narrow down their possible types.
 
@@ -188,9 +190,9 @@ The next time you're tempted to write `: any`, pause and ask yourself: _do I act
 
 `narrowing` is the process of refining a value's type from a broader type to a more specific one based on runtime checks.
 
-#### Sincerely
+_**Sincerely**_
+</br></br>
+_author:_ **Uhai Mong** -Full stack web developer(MERN) </br>
+_Published:_ **07 May, 2026 :** _01:00 AM_
 
-**author:** _Uhai Mong_ </br>
-**Published:** _07 May, 2026_
-
-**_Thanks for your time_**
+**_Thank you_**
